@@ -1,15 +1,15 @@
 import "./Header.css"
-function Header() {
+function Header(props) { //รับ props มาใช้
 
     const myStyle = {
         fontSize: "30px",
         padding: "10px", 
         margin: "10px"
     }
-    
+
     return (
         <nav>
-            <h2 style={myStyle}>App Header</h2>
+            <h2 style={myStyle}>{props.title}</h2>
             <button>Light/Dark</button>
         </nav>
     );

@@ -27,7 +27,7 @@ function App() {
   return (
     //ถ้ามี html มากว่า 1 คำสั่งต้องมี <> </> , return คือการส่ง html ไปทำงานที่ main.jsx
     <div className="App">
-      <Header />{/*เรียกใช้ component*/}
+      <Header title = "My pactice props" />{/*เรียกใช้ component และส่ง props title ไปทำงาน*/}
         <main>
 
           <h1 className="title">สวัสดีครับผม :{name}</h1>
