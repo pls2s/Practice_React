@@ -1,8 +1,10 @@
+import "./Header.css"
 function Header() {
     return (
-        <>
-            <h1>App Header</h1>
-        </>
+        <nav>
+            <h2>App Header</h2>
+            <button>Light/Dark</button>
+        </nav>
     );
 }
 
