@@ -27,13 +27,15 @@ function App() {
     //ถ้ามี html มากว่า 1 คำสั่งต้องมี <> </> , return คือการส่ง html ไปทำงานที่ main.jsx
     <>
       <Header />{/*เรียกใช้ component*/}
+      <main>
 
-      <h1>สวัสดีครับผม :{name}</h1>
+      <h1 className="title">สวัสดีครับผม :{name}</h1>
       <p>อายุ :{age} </p>
       <button onClick={() => addAge()}>add age</button>
       <button onClick={() => deleteAge()}>delete age</button>
       <button onClick={() => setAge(30)}>reset</button>
-
+      
+      </main>
       <PersonList />{/*เรียกใช้ component*/}
     </>
   );
