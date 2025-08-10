@@ -1,17 +1,9 @@
 import { useState } from "react";
-import boy from "../assets/boy.svg";
-import girl from "../assets/girl.svg";
 import "./PersonList.css";
+import User from "./User";
 
-function PersonList() {
-
-    const [data, _setData] = useState([
-    { id: 1, name: "Peerawoot1", gender: "male" },
-    { id: 2, name: "Peerawoot2", gender: "female" },
-    { id: 3, name: "Peerawoot3", gender: "male" },
-    { id: 4, name: "Peerawoot4", gender: "female" },
-    { id: 5, name: "Peerawoot5", gender: "male" }]);
-
+function PersonList(props) {
+    const data = props.data; //รับ data มาจาก App 
     const [show, setShow] = useState(true);
     return (
         <div className="container">
@@ -23,14 +15,7 @@ function PersonList() {
             <div className="body">
                 <ul>  
                     {show && data.map((obj) => ( //map คือการวนลูป ข้อมูลทุกตัวใน data useState ใช้ show เพื่อสลับการแสดงข้อมูล 
-                        <li key={obj.id} style={{borderStyle : "solid", boxShadow: obj.gender === "male" ? "1px 1px 1px 1px blue" : "1px 1px 1px 1px pink", bordercolor: obj.gender === "male" ? "blue" : "pink"}}>  {/*key เป็น id ของข้อมูล จะต้องใช้อันที่ข้อมูลไม่ช้ำ */}
-                            <img src={obj.gender === "male" ? boy : girl} width={40} height={40}/> {/*ถ้าเป็นชายให้แสดง boy ถ้าเป็นหญิงให้แสดง girl*/}
-                            <p style={{color: obj.gender === "male" ? "blue" : "pink"}}>ID : {obj.id} , ชื่อ : {obj.name} , เพศ : {obj.gender} </p> {/*ถ้าเป็นชายให้แสดง blue ถ้าเป็นหญิงให้แสดง pink*/}
-                            <div className="control">
-                                <button>edit</button>
-                                <button>delete</button>
-                            </div>
-                        </li> 
+                        <User key={obj.id} obj={obj}/> //ส่งข้อมูลไปใช้ใน User
                     ))}
                 </ul>
             </div>
