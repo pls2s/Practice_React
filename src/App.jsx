@@ -10,6 +10,7 @@ function App() {
     { id: 4, name: "Peerawoot4", gender: "female" },
   ]);
 
+  
   function addAge() {
     setAge(age + 1);
     if (age >= 60) {
@@ -24,6 +25,8 @@ function App() {
     }
   }
 
+  const [show, setShow] = useState(true);
+
   return (
     //ถ้ามี html มากว่า 1 คำสั่งต้องมี <> </> , return คือการส่ง html ไปทำงานที่ main.jsx
     <>
@@ -32,14 +35,15 @@ function App() {
       <button onClick={() => addAge()}>add age</button>
       <button onClick={() => deleteAge()}>delete age</button>
       <button onClick={() => setAge(30)}>reset</button>
-
       <h1>จำนวนประชากร {data.length}</h1>
+
+      <button onClick={() => setShow(!show)}>{show ? "hide" : "show"}</button> {/*สลับการแสดงข้อมูล รีเทินเป็น t/f  , ? คือ if , : คือ else*/}
+
       <ul>
-        {data.map((obj) => ( //map คือการวนลูป ข้อมูลทุกตัวใน data useState
+        {show && data.map((obj) => ( //map คือการวนลูป ข้อมูลทุกตัวใน data useState ใช้ show เพื่อสลับการแสดงข้อมูล 
           <li key={obj.id}> {/*key เป็น id ของข้อมูล จะต้องใช้อันที่ข้อมูลไม่ช้ำ */}
             ชื่อ : {obj.name}, เพศ : {obj.gender}
-          </li>
-        ))}
+          </li> ))}
       </ul>
     </>
   );
