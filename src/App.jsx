@@ -30,6 +30,12 @@ function App() {
     { id: 6, name: "Peerawoot6", gender: "female" },
   ]);
 
+
+  function delete_user(id){
+    const new_data = data.filter((user) => user.id !== id); //ถ้าไม่ใช่ id ที่ส่งมา ให้เอามาสร้าง data ใหม่
+    _setData(new_data);
+  }
+
   return (
     //ถ้ามี html มากว่า 1 คำสั่งต้องมี <> </> , return คือการส่ง html ไปทำงานที่ main.jsx
     <div className="App">
@@ -42,7 +48,8 @@ function App() {
         <button onClick={() => deleteAge()}>delete age</button>
         <button onClick={() => setAge(30)}>reset</button>
       </main>
-      <PersonList data={data} />
+      <PersonList data={data} delete_user={delete_user} />
+      
       {/*เรียกใช้ component และส่ง data ไปทำงาน*/}
     </div>
   );

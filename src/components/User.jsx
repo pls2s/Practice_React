@@ -1,6 +1,6 @@
 import boy from "../assets/boy.svg";
 import girl from "../assets/girl.svg";
-function User({obj}) { //รับ props มาใช้ ที่สืบทอดมาจาก PersonList และpersonList ก็สืบทอดมาจาก App อีก
+function User({obj,delete_user}){ //รับ props มาใช้ ที่สืบทอดมาจาก PersonList และpersonList ก็สืบทอดมาจาก App อ
     
     return (
         <>
@@ -9,7 +9,7 @@ function User({obj}) { //รับ props มาใช้ ที่สืบท�
                 <p style={{color: obj.gender === "male" ? "blue" : "pink"}}>ID : {obj.id} , ชื่อ : {obj.name} , เพศ : {obj.gender} </p> {/*ถ้าเป็นชายให้แสดง blue ถ้าเป็นหญิงให้แสดง pink*/}
                 <div className="control">
                     <button>edit</button>
-                    <button>delete</button>
+                    <button onClick={() => confirm("ยืนยันการลบข้อมูล") && delete_user(obj.id)}>delete</button> {/*ถ้ากด delete ให้แสดง confirm ก่อนลบ ,ดูชื่อ props ที่ส่งมาดีๆ*/}
                 </div>
             </li> 
         </>

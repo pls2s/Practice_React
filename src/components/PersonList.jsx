@@ -4,6 +4,7 @@ import User from "./User";
 
 function PersonList(props) {
     const data = props.data; //รับ data มาจาก App 
+    const delete_user = props.delete_user;
     const [show, setShow] = useState(true);
     return (
         <div className="container">
@@ -15,7 +16,7 @@ function PersonList(props) {
             <div className="body">
                 <ul>  
                     {show && data.map((obj) => ( //map คือการวนลูป ข้อมูลทุกตัวใน data useState ใช้ show เพื่อสลับการแสดงข้อมูล 
-                        <User key={obj.id} obj={obj}/> //ส่งข้อมูลไปใช้ใน User
+                        <User key={obj.id} obj={obj} delete_user={delete_user}/> //ส่งข้อมูลไปใช้ใน User
                     ))}
                 </ul>
             </div>
