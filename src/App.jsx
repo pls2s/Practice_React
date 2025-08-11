@@ -22,6 +22,8 @@ function App() {
     }
   }
 
+
+
   const [data, _setData] = useState([
     { id: 1, name: "Peerawoot1", gender: "male" },
     { id: 2, name: "Peerawoot2", gender: "female" },
@@ -49,7 +51,7 @@ function App() {
         <button onClick={() => deleteAge()}>delete age</button>
         <button onClick={() => setAge(30)}>reset</button>
       </main>
-      <Addform />
+      <Addform data={data} setData={_setData}/>
       <PersonList data={data} delete_user={delete_user} />
       
       {/*เรียกใช้ component และส่ง data ไปทำงาน*/}

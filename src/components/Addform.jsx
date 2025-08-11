@@ -2,14 +2,25 @@
 import "./Addform.css";
 import { useState } from "react";
 
-function Addform() {
+function Addform(props) {
 
-const [name, setName] = useState("");
-const [gender, setGender] = useState("");
+    const { data, setData } = props; //กระจายข้อมูลมาจาก App
+
+    const [name, setName] = useState("");
+    const [gender, setGender] = useState("");
 
     function submit(event) {
         event.preventDefault(); //ใช้เพื่อป้องกันการโหลดหน้าเว็บ
-        console.log(name, gender);
+
+        //เตรียนค่าในตัวแปร
+        const person = {  
+            id: data.length + 1
+            ,name: name, 
+            gender: gender }; 
+
+        setData([...data,person ]); //เอาข้อมูลมาสร้างใหม่ โดย การแยกdataอันเดิมและเพิ่มข้อมูลใหม่
+        setGender("male"); 
+        setName("");
     }
 
     return (
@@ -21,7 +32,6 @@ const [gender, setGender] = useState("");
                     <option value="male">male</option>
                     <option value="female">female</option>
                 </select>
-
                 <button type="submit" className="button" disabled={name.trim() === "" || gender.trim() === ""} confirm="ยืนยันการเพิ่มข้อมูล" >Add</button> {/*ถ้าไม่มีชื่อ หรือ เพศ ให้แสดง disabled .trim คือการลบช่องว่าง*/}
             </form>
         </section>
