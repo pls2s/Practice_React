@@ -77,3 +77,9 @@ main {
   max-width: 1200px;
   min-height: 90;
 }
+
+button:focus{
+  outline: none;
+  border-color: #6b9cff;
+  box-shadow: 0 0 0 3px rgba(107,156,255,.25);
+}

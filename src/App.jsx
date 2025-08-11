@@ -3,6 +3,7 @@ import { useState } from "react";
 import Header from "./components/Header"; //import component 'Header from "./components/Header";';
 import PersonList from "./components/PersonList";
 import "./App.css";
+import Addform from "./components/Addform";
 function App() {
   const name = "Peerawoot";
   const [age, setAge] = useState(30); //ตัวแปรสถานะ เปลี่ยนได้ตลอดเวลาที่ใ้ชงาน
@@ -48,6 +49,7 @@ function App() {
         <button onClick={() => deleteAge()}>delete age</button>
         <button onClick={() => setAge(30)}>reset</button>
       </main>
+      <Addform />
       <PersonList data={data} delete_user={delete_user} />
       
       {/*เรียกใช้ component และส่ง data ไปทำงาน*/}

@@ -1,0 +1,59 @@
+/* Addform.css */
+.container{
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #a3a3a3;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  background: #fff;
+}
+
+.form{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;         /* ย่อจอแล้วตัดบรรทัดได้ */
+}
+
+.label{
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.input,
+.select{
+  padding: 10px 12px;
+  border: 1px solid #a3a3a3;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+
+.input{
+  flex: 1;                 /* ขยายกินพื้นที่ที่เหลือ */
+  min-width: 180px;
+}
+
+.select{
+  min-width: 130px;
+}
+
+
+
+.button:hover{ background: #eee; }
+.button:active{ transform: translateY(1px); }
+
+.input:focus,
+.select:focus,
+.button:focus{
+  outline: none;
+  border-color: #6b9cff;
+  box-shadow: 0 0 0 3px rgba(107,156,255,.25);
+}
+
+.button-save:disabled{
+  opacity: .5;
+  cursor: not-allowed;
+  color: #fff;
+}
+
