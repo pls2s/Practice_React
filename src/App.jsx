@@ -4,6 +4,8 @@ import Header from "./components/Header"; //import component 'Header from "./com
 import PersonList from "./components/PersonList";
 import "./App.css";
 import Addform from "./components/Addform";
+import {  useEffect } from "react";
+
 function App() {
   const name = "Peerawoot";
   const [age, setAge] = useState(30); //ตัวแปรสถานะ เปลี่ยนได้ตลอดเวลาที่ใ้ชงาน
@@ -21,9 +23,6 @@ function App() {
       alert("อายุต่ำเกินไป");
     }
   }
-
-
-
   const [data, _setData] = useState([
     { id: 1, name: "Peerawoot1", gender: "male" },
     { id: 2, name: "Peerawoot2", gender: "female" },
@@ -32,6 +31,12 @@ function App() {
     { id: 5, name: "Peerawoot5", gender: "male" },
     { id: 6, name: "Peerawoot6", gender: "female" },
   ]);
+  
+  useEffect(() => {
+    console.log("useEffect used"); //useeffect จะทำงานตอน render compnent ที่เรียก
+  },[data]); //[] จะทํางานเมื่อเรียกเป็นครั้งแรก ครั้งเดียว   ,  [data] จะทํางานเมื่อ data มีการเปลี่ยนแปลง
+
+
 
 
   function delete_user(id){
