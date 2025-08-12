@@ -1,16 +1,20 @@
 import { useState } from "react";
 import "./PersonList.css";
 import User from "./User";
+import { GrFormViewHide } from "react-icons/gr";
+import { BiSolidShow } from "react-icons/bi";
 
 function PersonList(props) {
     const data = props.data; //รับ data มาจาก App 
     const delete_user = props.delete_user;
     const [show, setShow] = useState(true);
+    
     return (
         <div className="container">
             <div className="header">
-                <h2>จำนวนประชากร {data.length}</h2>
-                <button onClick={() => setShow(!show)}>{show ? "hide" : "show"}</button> {/*สลับการแสดงข้อมูล รีเทินเป็น t/f  , ? คือ if , : คือ else*/}
+                <h2 >จำนวนประชากร {data.length}</h2>
+            
+                <span className="icon" onClick={() => setShow(!show)}>{show ? <GrFormViewHide size={30} /> : <BiSolidShow size={30} /> }</span> {/*สลับการแสดงข้อมูล รีเทินเป็น t/f  , ? คือ if , : คือ else*/}
             </div>
             
             <div className="body">

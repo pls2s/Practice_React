@@ -26,3 +26,9 @@ li{
     border-radius: 10px;
 }
 
+.icon{
+    cursor: pointer;
+    margin-right: 10px;
+    size: 30px;
+}
+

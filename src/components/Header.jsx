@@ -1,4 +1,8 @@
 import "./Header.css"
+import { IoSunnySharp } from "react-icons/io5";
+import { IoMoonSharp } from "react-icons/io5";
+
+
 function Header(props) { //รับ props มาใช้
     const mode = props.mode
     const setMode = props.setMode
@@ -6,6 +10,7 @@ function Header(props) { //รับ props มาใช้
     function toggleMode(){
         setMode(mode === "light" ? "dark" : "light")
     }
+
 
     const myStyle = {
         fontSize: "30px",
@@ -16,7 +21,9 @@ function Header(props) { //รับ props มาใช้
     return (
         <nav>
             <h2 style={myStyle}>{props.title}</h2>
-            <button onClick={toggleMode}>Swich Mode : {mode}</button> {/*สลับโหมดเชื่อมต่อกับ toggleMode function*/}
+            <span onClick={toggleMode}  > 
+                {mode === "light" ? <IoSunnySharp size={30} /> : <IoMoonSharp size={30}/>}
+            </span>
             {console.log(mode)}
         </nav>
     );

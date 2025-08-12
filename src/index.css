@@ -12,7 +12,7 @@ a:hover {
 
 .title {
   text-align: center;
-  color: rgb(0, 0, 0);
+
 }
 
 h1 {
@@ -56,7 +56,7 @@ button:focus-visible {
 }
 
 p {
-  color: rgb(0, 0, 0);
+
   font-size: 20px;
   padding: 10px;
   font-family: inherit;
@@ -64,7 +64,6 @@ p {
 }
 
 main {
-  background-color: #ffffff;
 
   margin: auto;
   display: flex;

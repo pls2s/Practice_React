@@ -6,10 +6,11 @@ import "./App.css";
 import Addform from "./components/Addform";
 import {  useEffect } from "react";
 
+
 function App() {
   const name = "Peerawoot";
   const [age, setAge] = useState(30); //ตัวแปรสถานะ เปลี่ยนได้ตลอดเวลาที่ใ้ชงาน
-  const [mode, setMode] = useState(localStorage.getItem("mode") || "light"); //ตัวแปรสถานะ เปลี่ยนได้ตลอดเวลาที่ใ้ชงาน มีค่าเริ่มต้นเป็น light
+  const [mode, setMode] = useState(localStorage.getItem("mode") || "light"); //ตัวแปรสถานะ เปลี่ยนได้ตลอดเวลาที่ใ้ชงาน มีค่าเริ่มต้นเป็น light ถ้าไม่เคยมีค่าใน localStorage
 
   function addAge() {
     setAge(age + 1);
