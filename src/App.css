@@ -3,3 +3,16 @@
   padding: 0px 10px;
   margin: auto;
 }
+
+.light{
+  background-color: white;
+  color: rgb(0, 0, 0);
+  transition: all 0.5s ease-in-out;
+}
+
+
+.dark{
+  background-color: rgb(70, 70, 70);
+  color: white;
+  transition: all 0.5s ease-in-out;
+}

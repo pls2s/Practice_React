@@ -9,6 +9,7 @@ import {  useEffect } from "react";
 function App() {
   const name = "Peerawoot";
   const [age, setAge] = useState(30); //ตัวแปรสถานะ เปลี่ยนได้ตลอดเวลาที่ใ้ชงาน
+  const [mode, setMode] = useState("light");
 
   function addAge() {
     setAge(age + 1);
@@ -46,8 +47,9 @@ function App() {
 
   return (
     //ถ้ามี html มากว่า 1 คำสั่งต้องมี <> </> , return คือการส่ง html ไปทำงานที่ main.jsx
-    <div className="App">
-      <Header title="My pactice props" />
+    <div className={mode} >
+      <div className="App">
+      <Header title="My pactice props" mode={mode} setMode={setMode} />
       {/*เรียกใช้ component และส่ง props title ไปทำงาน*/}
       <main>
         <h1 className="title">สวัสดีครับผม :{name}</h1>
@@ -60,6 +62,7 @@ function App() {
       <PersonList data={data} delete_user={delete_user} />
       
       {/*เรียกใช้ component และส่ง data ไปทำงาน*/}
+      </div>
     </div>
   );
 } //คำสั่ง js จะเขียนอยู่ใน {}
